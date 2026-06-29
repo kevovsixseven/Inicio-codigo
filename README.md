@@ -8,3 +8,4 @@ El sistema se encuentra en una fase beta funcional y escalable, sentando una bas
 
 27 de junio de 2026 - Quinta actualización de código: se implementa la eliminación de reclamos en el árbol binario de búsqueda (BST), incorporando el manejo de nodos hoja, nodos con un hijo y nodos con dos hijos para mantener la consistencia de la estructura de datos.
 
+27 de junio de 2026 - Sexta actualización de código y Versión final: se implementa la búsqueda secuencial sobre la lista de reclamos y se integra al menú principal, permitiendo comparar su funcionamiento con la búsqueda binaria implementada mediante el árbol binario de búsqueda (BST).
