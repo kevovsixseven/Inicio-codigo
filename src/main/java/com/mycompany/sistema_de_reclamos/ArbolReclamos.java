@@ -55,7 +55,6 @@ public class ArbolReclamos {
             mostrarInOrdenRecursivo(raiz);
         }
     }
-
     private void mostrarInOrdenRecursivo(NodoArbol actual) {
         if (actual != null) {
             mostrarInOrdenRecursivo(actual.getIzquierdo());
@@ -63,4 +62,35 @@ public class ArbolReclamos {
             mostrarInOrdenRecursivo(actual.getDerecho());
         }
     }
+    
+    public void mostrarPreOrden(){
+        if(raiz==null){
+            System.out.println("\n*** El árbol está vacio ***");
+        }else{
+            mostrarPreOrdenRecursivo(raiz);
+        }
+    }
+    private void mostrarPreOrdenRecursivo(NodoArbol actual) {
+    if (actual != null) {
+        System.out.println("  " + actual.getReclamo());
+        mostrarPreOrdenRecursivo(actual.getIzquierdo());
+        mostrarPreOrdenRecursivo(actual.getDerecho());
+    }
+}
+    
+   public void mostrarPostOrden() {
+        if (raiz == null) {
+        System.out.println("\n*** El árbol está vacío ***");
+        }else{
+        mostrarPostOrdenRecursivo(raiz);
+        }
+    }
+   private void mostrarPostOrdenRecursivo(NodoArbol actual) {
+    if (actual != null) {
+        mostrarPostOrdenRecursivo(actual.getIzquierdo());
+        mostrarPostOrdenRecursivo(actual.getDerecho());
+        System.out.println("  " + actual.getReclamo());
+    }
+} 
+   
 }
