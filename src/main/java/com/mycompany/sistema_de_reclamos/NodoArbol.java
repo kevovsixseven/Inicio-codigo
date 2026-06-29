@@ -19,9 +19,24 @@ public class NodoArbol {
         this.derecho = null;
     }
 
-    public Reclamo getReclamo() { return reclamo; }
-    public NodoArbol getIzquierdo() { return izquierdo; }
-    public void setIzquierdo(NodoArbol izquierdo) { this.izquierdo = izquierdo; }
-    public NodoArbol getDerecho() { return derecho; }
-    public void setDerecho(NodoArbol derecho) { this.derecho = derecho; }
+    public Reclamo getReclamo() { 
+        return reclamo; 
+    }
+    public void setReclamo(Reclamo reclamo) {
+    this.reclamo = reclamo;
+}
+    
+    public NodoArbol getIzquierdo() { 
+        return izquierdo; 
+    }
+    public void setIzquierdo(NodoArbol izquierdo) { 
+        this.izquierdo = izquierdo; 
+    }
+   
+    public NodoArbol getDerecho() { 
+        return derecho; 
+    }
+    public void setDerecho(NodoArbol derecho) { 
+        this.derecho = derecho; 
+    }
 }

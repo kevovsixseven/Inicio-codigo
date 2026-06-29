@@ -47,6 +47,41 @@ public class ArbolReclamos {
             return buscarRecursivo(actual.getDerecho(), codigo);
         }
     }
+    
+    public void eliminar(int codigo) {
+    raiz = eliminarRecursivo(raiz, codigo);
+}
+    private NodoArbol eliminarRecursivo(NodoArbol actual, int codigo) {
+    if (actual == null) {
+        return null;
+    }
+    if (codigo < actual.getReclamo().getCodigoUnico()) {
+        actual.setIzquierdo(eliminarRecursivo(actual.getIzquierdo(), codigo));
+    }else if (codigo > actual.getReclamo().getCodigoUnico()) {
+        actual.setDerecho(eliminarRecursivo(actual.getDerecho(), codigo));
+    }else{
+         if (actual.getIzquierdo() == null) {
+        return actual.getDerecho();
+         }
+    if (actual.getDerecho() == null) {
+        return actual.getIzquierdo();
+         }
+    NodoArbol sucesor = obtenerMenor(actual.getDerecho());
+    actual.setReclamo(sucesor.getReclamo());
+    actual.setDerecho(eliminarRecursivo(
+        actual.getDerecho(),
+        sucesor.getReclamo().getCodigoUnico()));
+    }
+    return actual;
+}
+    
+    private NodoArbol obtenerMenor(NodoArbol nodo) {
+    while (nodo.getIzquierdo() != null) {
+        nodo = nodo.getIzquierdo();
+    }
+    return nodo;
+}
+    
 
     public void mostrarInOrden() {
         if (raiz == null) {

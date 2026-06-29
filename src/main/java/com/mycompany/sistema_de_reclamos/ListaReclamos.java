@@ -86,7 +86,9 @@ public class ListaReclamos {
         return arreglo;
     }
     
-    public int getTamaño() { return tamaño; }
+    public int getTamaño() { 
+        return tamaño; 
+    }
     
     public void mergeSortPrioridad(Reclamo[] arreglo, int izq, int der) {
         if (izq < der) {
