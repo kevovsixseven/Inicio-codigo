@@ -66,6 +66,9 @@ public class Main {
                 case 8:
                     ejecutarOptimizacion(listaReclamos);
                     break;
+                case 9:
+                    buscarReclamoSecuencial(teclado, listaReclamos);
+                    break;
                 case 0:
                     System.out.println("\n*** Programa finalizado correctamente. ***");
                     break;
@@ -85,10 +88,11 @@ public class Main {
         System.out.println("2. Modificar reclamo existente");
         System.out.println("3. Eliminar reclamo");
         System.out.println("4. Atender reclamo ");
-        System.out.println("5. Buscar reclamo e historial");
+        System.out.println("5. Buscar reclamo e historial(Arbol BST)");
         System.out.println("6. Mostrar todos los reclamos");
         System.out.println("7. Ordenar por Prioridad");
         System.out.println("8. Ejecutar Optimización");
+        System.out.println("9. Buscar reclamo (Búsqueda Secuencial)");
         System.out.println("0. Finalizar");
     }
 
@@ -184,6 +188,22 @@ public class Main {
             System.out.println("\n*** Reclamo no encontrado ***");
         }
     }
+    
+    private static void buscarReclamoSecuencial(Scanner teclado, ListaReclamos lista) {
+
+    System.out.print("\nIngrese el ID del reclamo: ");
+    int id = leerEntero(teclado);
+
+        Reclamo encontrado = lista.busquedaSecuencial(id);
+
+    if (encontrado != null) {
+        System.out.println("\n*** Reclamo Encontrado ***");
+        System.out.println(encontrado);
+        encontrado.mostrarHistorial();
+    } else {
+        System.out.println("\n*** Reclamo no encontrado ***");
+    }
+}
 
     private static void mostrarReclamosOrdenadosPrioridad(ListaReclamos lista) {
         Reclamo[] arreglo = lista.toArray();

@@ -43,7 +43,8 @@ public class ListaReclamos {
     }
 
     public boolean eliminarReclamo(int codigo) {
-        if (cabeza == null) return false;
+        if (cabeza == null) 
+            return false;
 
         if (cabeza.getReclamo().getCodigoUnico() == codigo) {
             cabeza = cabeza.getSiguiente();
@@ -155,4 +156,15 @@ public class ListaReclamos {
         }
         return null;
     }
+    
+    public Reclamo busquedaSecuencial(int codigo) {
+    NodoLista actual = cabeza;
+    while (actual != null) {
+        if (actual.getReclamo().getCodigoUnico() == codigo) {
+            return actual.getReclamo();
+        }
+        actual = actual.getSiguiente();
+    }
+    return null;
+  }
 }

@@ -54,11 +54,21 @@ public class Reclamo {
         }
     }
 
-    public int getCodigoUnico() { return codigoUnico; }
-    public String getTipoReclamo() { return tipoReclamo; }
-    public int getPrioridad() { return prioridad; }
-    public String getEstado() { return estado; }
-    public LocalDate getFechaLimite() { return fechaLimite; }
+    public int getCodigoUnico() { 
+        return codigoUnico; 
+    }
+    public String getTipoReclamo() { 
+        return tipoReclamo; 
+    }
+    public int getPrioridad() 
+    { return prioridad; 
+    }
+    public String getEstado() { 
+        return estado; 
+    }
+    public LocalDate getFechaLimite() { 
+        return fechaLimite; 
+    }
 
     public void setEstado(String estado) {
         this.estado = estado;
